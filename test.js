@@ -3,7 +3,6 @@ var a = 1;
 var b;
 b = 5;
 
-
 if (true) {
     let c = 'let 접근';
     var c_1 = 'var 접근';
@@ -19,7 +18,6 @@ const e = '상수1 접근'
 //e = 5;
 ///const f // Error?
 console.log(e);
-
 
 document.getElementByld("search_btn").addEventListener('click', search_message);
 
