@@ -20,7 +20,7 @@ const obj1 = {};
 // 속성을 추가하여 객체 생성
 const obj2 = {
     name: "John Doe",
-    age: 30
+    age: 30,
     isMale: true,
 };
 
