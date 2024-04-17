@@ -19,8 +19,6 @@ const e = '상수1 접근'
 ///const f // Error?
 console.log(e);
 
-document.getElementById("search_btn").addEventListener('click', search_message);
-
 // function search_message(){
     alert("검색을 수행합니다!");
 // }
@@ -33,3 +31,5 @@ const search_message = () => {
     const c = '검색을 수행합니다';
     alert(c);
 };
+
+document.getElementById("search_btn").addEventListener('click', search_message);
