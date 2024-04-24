@@ -32,7 +32,7 @@ const check_input = () => {
         }
     
         if (passwordValue.length < 12) {
-            alert('비밀 번호는 반드시 12글자 이상 입력해야 합니다.');
+            alert('비밀번호는 반드시 12글자 이상 입력해야 합니다.');
             return false;
             }
         const hasSpecialChar = passwordValue.match(/[!,@#$%^&*()_+\=\[\]{};':"\\|,.<>\/?]+/) !== null;
@@ -56,7 +56,7 @@ const check_input = () => {
                 // Sanitize된 비밀번호 사용
                return false;
                 }
-                
+
             if (!sanitizedPassword) {
                 // Sanitize된 비밀번호 사용
                 return false;
