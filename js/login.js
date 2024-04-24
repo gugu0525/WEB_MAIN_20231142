@@ -45,6 +45,22 @@ const check_input = () => {
         if (!hasUpperCase || !hasLowerCase) {
             alert('패스워드는 대소문자를 1개 이상 포함해야 합니다.');
             return false;
+
+            const sanitizedPassword = 
+            check_xss(passwordValue);
+             // check_xss 함수로 비밀번호 Sanitize
+             const sanitizedEmail = check_xss(emailValue);
+             // check_xss 함수로 비밀번호 Sanitize
+
+             if (!sanitizedEmail) {
+                // Sanitize된 비밀번호 사용
+               return false;
+                }
+                
+            if (!sanitizedPassword) {
+                // Sanitize된 비밀번호 사용
+                return false;
+                }
     }
        
     const c = '아이디, 패스워드를 체크합니다';
