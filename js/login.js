@@ -1,3 +1,9 @@
+const check_input = () => {
+
+    const loginForm = document.getElementById('login_form');
+    const loginBtn = document.getElementById('login_btn');
+    const emailInput= document.getElementById('typeEmailX');
+    const passwordInput = document.getElementById('typePasswordX');
 
     if (emailValue.length < 5) {
     alert('아이디는최소5글자이상입력해야합니다.');
