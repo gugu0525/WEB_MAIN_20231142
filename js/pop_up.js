@@ -5,6 +5,31 @@ function pop_up() {
     }
 }
 
+
+function setCookie(name, value, expiredays) {
+    var date = new Date();
+    date.setDate(date.getDate() + expiredays);
+    document.cookie = escape(name) + "=" + escape(value) + "; 
+   expires=" + date.toUTCString() + "; path=/";
+    }
+
+function getCookie(name) {
+    var cookie = document.cookie;
+    console.log("쿠키를 요청합니다.");
+    if (cookie != "") {
+        var cookie_array = cookie.split("; ");
+        for ( var index in cookie_array) {
+            var cookie_name = cookie_array[index].split("=");
+
+        if (cookie_name[0] == "popupYN") {
+            return cookie_name[1];
+        }
+    }
+    }
+    return ;
+}
+   
+
 function show_clock(){
         let currentDate= new Date(); // 현재시스템날짜객체생성
         let divClock= document.getElementById('divClock');
