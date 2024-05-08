@@ -104,7 +104,7 @@ const check_input = () => {
     document.getElementById("login_btn").addEventListener('click', check_input);
 
 
-    function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
+function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
     const emailInput = document.getElementById('typeEmailX');
     const idsave_check = document.getElementById('idSaveCheck');
     let get_id = getCookie("id");
