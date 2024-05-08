@@ -23,6 +23,8 @@ const check_input = () => {
     const loginBtn = document.getElementById('login_btn');
     const emailInput= document.getElementById('typeEmailX');
     const passwordInput = document.getElementById('typePasswordX');
+    // 전역 변수 추가, 맨 위 위치
+    const idsave_check = document.getElementById('idSaveCheck');
 
     const emailValue = emailInput.value.trim();
     const passwordValue = passwordInput.value.trim();
@@ -80,6 +82,22 @@ const check_input = () => {
 
         console.log('이메일:', emailValue);
         console.log('비밀번호:', passwordValue);
+
+
+    // 검사 마무리 단계 쿠키 저장, 최하단 submit 이전
+	if(idsave_check.checked == true) { // 아이디 체크 o
+		alert("쿠키를 저장합니다.", emailValue);
+		setCookie("id", emailValue, 1); // 1일 저장 
+        alert("쿠키 값 :" + emailValue);
+    } 
+    else
+    { // 아이디 체크 x 
+        setCookie("id", emailValue.value, 0); //날짜를 0 - 쿠키 삭제 
+    }
+
+
+
+
         loginForm.submit();
     };
 
@@ -97,17 +115,6 @@ function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
     }
 }
 
-
-// 검사 마무리 단계 쿠키 저장, 최하단 submit 이전
-if(idsave_check.checked == true) { // 아이디 체크 o
-    alert("쿠키를 저장합니다.", emailValue);
-    setCookie("id", emailValue, 1); // 1일 저장 
-alert("쿠키 값 :" + emailValue);
-} 
-else
-{ // 아이디 체크 x 
-setCookie("id", emailValue.value, 0); //날짜를 0 - 쿠키 삭제 
-}
 
 
     
