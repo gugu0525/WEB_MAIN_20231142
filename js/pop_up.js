@@ -52,3 +52,10 @@ function show_clock(){
         setTimeout(show_clock, 1000);  // 1초마다갱신
 }
        
+function closePopup() {
+    if (document.getElementById('check_popup').value) {
+    setCookie("popupYN", "N", 1);
+    console.log("쿠키를 설정합니다.");
+    self.close();
+    }
+}
