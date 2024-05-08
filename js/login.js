@@ -1,3 +1,4 @@
+
 const check_xss = (input) => {
     // DOMPurify 라이브러리 로드 (CDN 사용)
     const DOMPurify = window.DOMPurify;
@@ -83,5 +84,30 @@ const check_input = () => {
     };
 
     document.getElementById("login_btn").addEventListener('click', check_input);
+
+
+function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
+    const emailInput = document.getElementById('typeEmailX');
+    const idsave_check = document.getElementById('idSaveCheck');
+    let get_id = getCookie("id");
+        
+    if(get_id) {
+    emailInput.value = get_id;
+    idsave_check.checked = true;
+    }
+}
+
+
+// 검사 마무리 단계 쿠키 저장, 최하단 submit 이전
+if(idsave_check.checked == true) { // 아이디 체크 o
+    alert("쿠키를 저장합니다.", emailValue);
+    setCookie("id", emailValue, 1); // 1일 저장 
+alert("쿠키 값 :" + emailValue);
+} 
+else
+{ // 아이디 체크 x 
+setCookie("id", emailValue.value, 0); //날짜를 0 - 쿠키 삭제 
+}
+
 
     
