@@ -139,7 +139,7 @@ function session_set() { //세션 저장
 
 function session_get() { //세션 읽기
     if (sessionStorage) {
-        return sessionStorage.getItem("Session_Storage_test");
+        return sessionStorage.getItem("Session_Storage_pass");
         } else {
         alert("세션 스토리지 지원 x");
     }
@@ -154,7 +154,7 @@ if(id.value.length === 0 || password.value.length === 0){
 
 
     function session_check() { //세션 검사
-        if (sessionStorage.getItem("Session_Storage_test")) {
+        if (sessionStorage.getItem("Session_Storage_id")) {
          alert("이미 로그인 되었습니다.");
          location.href="..login/index_login.html"; // 로그인된 페이지로 이동
         }
@@ -211,14 +211,14 @@ functionencodeByAES256(key, data){
 }
 
 
-functiondecodeByAES256(key, data){
-    constcipher= CryptoJS.AES.decrypt(data, CryptoJS.enc.Utf8.parse(key), {
+functiondecodeByAES256(key, data)
+    {constcipher= CryptoJS.AES.decrypt(data, CryptoJS.enc.Utf8.parse(key), {
     iv: CryptoJS.enc.Utf8.parse(""),
     padding: CryptoJS.pad.Pkcs7,
     mode: CryptoJS.mode.CBC
     });
     returncipher.toString(CryptoJS.enc.Utf8);
-}
+    }
 
 
 function encrypt_text(password){
