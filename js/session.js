@@ -18,7 +18,15 @@
         let random = new Date(); // 랜덤 타임스탬프
         
         const obj = { // 객체 선언
-        id : id.value,
+            if(get_id) {
+                emailInput.value = get_id;
+                idsave_check.checked = true;
+                }
+            
+                if(get_id) { 
+                    id.value = get_id; 
+                    check.checked = true; 
+                    }
         otp : random
         }
         
