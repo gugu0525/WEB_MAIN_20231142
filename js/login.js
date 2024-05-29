@@ -201,8 +201,8 @@ function getCookie(name) {
 }
 
 
-functionencodeByAES256(key, data){
-    constcipher= CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
+functionencodeByAES256(key, data)
+    {constcipher= CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
     iv: CryptoJS.enc.Utf8.parse(""),
     padding: CryptoJS.pad.Pkcs7,
     mode: CryptoJS.mode.CBC
