@@ -99,7 +99,7 @@ const check_input = () => {
         loginForm.submit();
     };
 
-    document.getElementById("login_btn").addEventListener('click', check_input);
+    document.getElementById("logout_btn").addEventListener('click', logout);
 
 
 function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
