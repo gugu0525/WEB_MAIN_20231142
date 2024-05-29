@@ -239,3 +239,15 @@ function decrypt_text(){
     const b = this.decodeByAES256(rk, eb);
     console.log(b); 
 }
+
+
+function init_logined(){
+    if(sessionStorage){
+    decrypt_text(); // 복호화 함수
+   }
+    else{
+    alert("세션 스토리지 지원 x");
+    }
+    }
+
+
