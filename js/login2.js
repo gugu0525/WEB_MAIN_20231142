@@ -1,20 +1,18 @@
 
-const check_xss = (input) => {
-    // DOMPurify 라이브러리 로드 (CDN 사용)
-    const DOMPurify = window.DOMPurify;
+function addJavascript(jsname) { // 자바스크립트 외부 연동
+    var th = document.getElementsByTagName('head')[0];
+    var s = document.createElement('script');
+    s.setAttribute('type','text/javascript');
+    s.setAttribute('src',jsname);
+    th.appendChild(s);
+}
 
-    // 입력 값을 DOMPurify로 sanitize
-    const sanitizedInput = DOMPurify.sanitize(input);
-     // Sanitized된 값과 원본 입력 값 비교
-     if (sanitizedInput !== input) {
-        // XSS 공격 가능성 발견 시 에러 처리
-        alert('XSS 공격 가능성이 있는 입력값을 발견했습니다.');
-        return false;
-    }
+addJavascript('/js/security.js'); // 암복호화 함수
+addJavascript('/js/session.js'); // 세션 함수
+addJavascript('/js/cookie.js'); // 쿠키 함수
 
-    // Sanitized된 값 반환
-    return sanitizedInput;
-};
+
+
 
 
 const check_input = () => {
@@ -174,41 +172,6 @@ function setCookie(name, value, expiredays) {
     document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "; path=/" + ";SameSite=None; Secure";
     }
 
-function getCookie(name) {
-    var cookie = document.cookie;
-    console.log("쿠키를 요청합니다.");
-    if (cookie != "") {
-        var cookie_array = cookie.split("; ");
-        for ( var index in cookie_array) {
-            var cookie_name = cookie_array[index].split("=");
-
-        if (cookie_name[0] == "popupid") {
-            return cookie_name[1];
-        }
-    }
-    }
-    return ;
-}
-
-
-function encodeByAES256(key, data)
-    {const cipher= CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
-    iv: CryptoJS.enc.Utf8.parse(""),
-    padding: CryptoJS.pad.Pkcs7,
-    mode: CryptoJS.mode.CBC
-    });
-    return cipher.toString();
-}
-
-
-function decodeByAES256(key, data)
-    {const cipher= CryptoJS.AES.decrypt(data, CryptoJS.enc.Utf8.parse(key), {
-    iv: CryptoJS.enc.Utf8.parse(""),
-    padding: CryptoJS.pad.Pkcs7,
-    mode: CryptoJS.mode.CBC
-    });
-    return cipher.toString(CryptoJS.enc.Utf8);
-    }
 
 
 function encrypt_text(password){
@@ -229,15 +192,5 @@ function decrypt_text(){
     const b = this.decodeByAES256(rk, eb);
     console.log(b); 
 }
-
-
-function init_logined(){
-    if(sessionStorage){
-    decrypt_text(); // 복호화 함수
-   }
-    else{
-    alert("세션 스토리지 지원 x");
-    }
-    }
 
 

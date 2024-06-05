@@ -12,18 +12,9 @@
     //}
 
 
-
-    session_set(); // 세션 생성
-    loginForm.submit();
-
-    
-
-document.getElementById("login_btn").addEventListener('click', check_input);
-
-
     function session_set(){ //세션 저장(객체)    
-        let id = document.querySelector("#floatingInput");
-        let password = document.querySelector("#floatingPassword");
+        let id = document.querySelector("#typeEmailX");
+        let password = document.querySelector("#typePasswordX");
         let random = new Date(); // 랜덤 타임스탬프
         
         const obj = { // 객체 선언
