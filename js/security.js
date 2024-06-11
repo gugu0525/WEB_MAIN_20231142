@@ -47,9 +47,6 @@ function decodeByAES256(key, data)
     }
 
 
-session_set(); // 세션 생성
-loginForm.submit();
-
 
 function decrypt_text(){
     const k = "key"; // 서버의 키
