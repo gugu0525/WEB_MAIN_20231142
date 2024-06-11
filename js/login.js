@@ -7,9 +7,11 @@ function addJavascript(jsname) { // 자바스크립트 외부 연동
     th.appendChild(s);
 }
 
+
 addJavascript('/js/security.js'); // 암복호화 함수
 addJavascript('/js/session.js'); // 세션 함수
 addJavascript('/js/cookie.js'); // 쿠키 함수
+
 
 const check_xss = (input) => {
     // DOMPurify 라이브러리 로드 (CDN 사용)
@@ -131,7 +133,6 @@ function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
          session_check(); // 세션 유무 검사
     }
         
-
 
 
 

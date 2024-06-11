@@ -31,15 +31,24 @@ function decodeByAES256(key, data)
     }
 
 
-function encrypt_text(password){
-    const k = "key"; // 클라이언트 키
-   const rk = k.padEnd(32, " "); // AES256은 key 길이가 32
-    const b = password;
-    const eb = this.encodeByAES256(rk, b);
-    return eb;
-    console.log(eb);
-}
+    function encrypt_text(password){
+        const k = "key"; // 클라이언트 키
+        const rk = k.padEnd(32, " "); // AES256은 key 길이가 32
+        const b = password;
+        const eb = this.encodeByAES256(rk, b);
+        
+        if (eb) {
+            console.log(eb);
+            return eb; // 올바른 암호화된 데이터가 생성되었을 때만 반환
+        } else {
+            console.error("암호화된 데이터 생성에 실패했습니다.");
+            return null;
+        }
+    }
 
+
+session_set(); // 세션 생성
+loginForm.submit();
 
 
 function decrypt_text(){
