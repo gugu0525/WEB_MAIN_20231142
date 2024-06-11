@@ -33,7 +33,7 @@
     }
 
 
-    function session_join_set(){ //세션 저장(객체)    
+    function session_join_set(){ //세션 저장(객체2)    
             let f_name = document.querySelector("#firstName").value;
             let l_name = document.querySelector("#lastName").value;
             let b_day = document.querySelector("#birthdayDate").value;
