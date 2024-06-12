@@ -20,6 +20,64 @@
 
 
 
+    <body style="background-color: rgb(73, 73, 73)" onload="pop_up();">
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+          <div class="container-fluid">
+
+            <nav class="navbar bg-body-tertiary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                  <img src="image/H-logo1.png" alt="Logo" width="70" height="40" class="d-inline-block align-text-top">
+                  
+                </a>
+              </div>
+            </nav>
+
+
+
+    <a class="navbar-brand" href="#">Harry Potter</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">호그와트</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">기숙사</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">아카이브</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      다운로드
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="https://www.wizardingworld.com/">위저드 닷컴 공식 웹사이트</a></li>
+                      <li><a class="dropdown-item" href="#">빗자루</a></li>
+                      <li><a class="dropdown-item" href="#">스니치</a></li>
+                      <li><a class="dropdown-item" href="#">퀴디치</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <form class="d-flex" role="search" onsubmit="return googleSearch();">
+                    <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="키워드 입력" aria-label="Search">
+                    <button class="btn btn-outline-success" id="search_btn" type="submit">검색하기</button>
+                    <a href="login/login.html" class="btn btn-outline-success" id="login_btn">로그인 하기</a>
+                    </form>
+                </div>
+              </nav>
+              <button class="btn btn-outline-success" type="submit" onclick="location.href='/login/join.html'">회원가입</button>
+            </div>
+          </nav>
+
+
     <section style="background-color: #eee;">
         <div class="container py-5">
           <div class="row">
@@ -40,7 +98,7 @@
                 <div class="card-body text-center">
                   <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                     class="rounded-circle img-fluid" style="width: 150px;">
-                  <h5 class="my-3">John Smith</h5>
+                  <h5 class="my-3">해리 포터</h5>
                   <p class="text-muted mb-1">Full Stack Developer</p>
                   <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
                   <div class="d-flex justify-content-center mb-2">
